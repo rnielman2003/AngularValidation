@@ -1,0 +1,25 @@
+<div ng-app="myapp">
+  <div ng-controller="showCrtl">
+    <p class="fields_required"><span class="required">*</span> Required</p>
+    <form name="theForm" data-ng-submit="submitForm(newForm)" novalidate="" form-set-focus>
+
+      <div class="formFieldsWrapper">
+        <p class="p4 label"><span class="required">*</span>Select who this request is for:</p>
+        <div class="dateValidationWrapper">
+          <select name="requestFor" data-ng-model="newForm.requestFor" data-ng-options="p.first + ' ' + p.last for p in people" required>
+            <option value="">Select One</option>
+          </select>
+          <span ng-show="hasError('requestFor', 'required')" class="validationMessage">Please choose from the list</span>
+        </div>
+        </div>
+<div class="formFieldsWrapper">
+        <p class="p4 label"><span class="required">*</span>Please let us know how we can help you</p>
+        <textarea name="description" data-ng-model="newForm.description" required></textarea>
+        <span ng-show="hasError('description', 'required')" class="validationMessage">Please fill out the required textarea field</span>
+        </div>
+        </div>
+      <br /><br />
+      <input type="submit" value="SUBMIT" class="btn submitBtn" />
+    </form>
+  </div>
+</div>
