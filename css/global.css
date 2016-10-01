@@ -1,0 +1,286 @@
+input[type="text"] {
+  width: 310px;
+  margin-bottom: 15px;
+}
+
+.formFieldsWrapper {
+  position:relative;
+}
+
+form.ng-submitted input.ng-invalid,
+form.ng-submitted textarea.ng-invalid,
+form.ng-submitted select.ng-invalid,
+input.ng-invalid.ng-dirty,
+textarea.ng-invalid.ng-dirty,
+select.ng-invalid.ng-dirty {    
+    border-color: #f00 !important;
+}
+
+form.ng-submitted input[type="radio"].ng-invalid{
+    outline: 1px solid #f00 !important;
+}
+
+form.ng-submitted input[type="checkbox"].ng-invalid{
+    outline: 1px solid #f00 !important;
+}
+
+select {
+  width: 310px;
+  padding: 2px 5px 2px 5px;
+  margin-bottom: 15px;
+  border: 1px solid #bcbcbc;
+}
+
+textarea {
+  max-width: 473px;
+  min-width: 473px;
+  height: 125px;
+}
+
+input.btn {
+  display: block;
+  position: relative;
+  background-color: brown;
+  padding: 3px 5px;
+  min-width: 100px;
+  border: none;
+  text-align: center;
+  font-size: .75em;
+  color: #fff;
+  cursor: pointer;
+}
+
+input.signUpNowBtn {
+  margin: 10px auto;
+  margin-bottom: 20px;
+}
+
+input.submitBtn {
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+input.btn:hover {
+  background: #FFC107;
+}
+
+.submitBtnSectionWrapper {
+  margin-left: 20px;
+}
+
+span.required {
+  color: #fb0505;
+  margin-right: 3px;
+}
+
+.errorText {
+  color: #f00;
+  margin-top: 10px;
+}
+
+.successText {
+  color: #008000;
+  margin-top: 10px;
+}
+
+.fields_required {
+  padding: 10px 0;
+}
+
+.enrolleeIdWrapper {
+  margin-bottom: 10px;
+}
+
+
+/*--------------------------- Angular Validation-------------------------------------*/
+
+textarea.ng-invalid + span.validationMessage {
+  display: none;
+}
+
+textarea.ng-invalid:focus + span.validationMessage,
+input.ng-invalid:focus + span.validationMessage {
+  display: inline;
+  position: absolute;
+  color: #000;
+  background: #fff;
+  border: 1px solid #000;
+  padding: 6px 10px;
+  line-height: 12px;
+  text-align: center;
+  border-radius: 6px;
+  left: 0;
+  bottom: -25px;
+  box-shadow: 2px 2px 3px #A6A0A0;
+  z-index: 2;
+}
+
+textarea.ng-invalid:focus + span.validationMessage:before,
+input.ng-invalid:focus + span.validationMessage:before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 25px;
+  margin-left: -8px;
+  width: 0;
+  height: 0;
+  border-bottom: 8px solid #6D6D6D;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  z-index: 2;
+}
+
+textarea.ng-invalid:focus + span.validationMessage:after,
+input.ng-invalid:focus + span.validationMessage:after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 25px;
+  margin-left: -6px;
+  width: 0;
+  height: 0;
+  border-bottom: 6px solid #FFFFFF;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  z-index: 2;
+}
+
+
+/*------Align to the right, using for datepicker and select boxes--------*/
+
+.dateValidationWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dateValidationWrapper select.ng-invalid:focus + span.validationMessage,
+.dateValidationWrapper input[type="text"].ng-invalid:focus + span.validationMessage {
+  width: 150px;
+  display: inline;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  color: #000;
+  background: #fff;
+  border: 1px solid #000;
+  padding: 6px 10px;
+  line-height: 12px;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 2px 2px 3px #A6A0A0;
+  z-index: 2;
+  margin-top: -20px;
+  margin-left: 10px;
+}
+
+.dateValidationWrapper select.ng-invalid:focus + span.validationMessage:before,
+.dateValidationWrapper input[type="text"].ng-invalid:focus + span.validationMessage:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  margin-top: -10px;
+  width: 0;
+  height: 0;
+  border-right: 10px solid #6D6D6D;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  z-index: 2;
+}
+
+.dateValidationWrapper select.ng-invalid:focus + span.validationMessage:after,
+.dateValidationWrapper input[type="text"].ng-invalid:focus + span.validationMessage:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  margin-top: -8px;
+  width: 0;
+  height: 0;
+  border-right: 8px solid #ffffff;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  z-index: 2;
+}
+
+
+input[type="radio"].ng-invalid + span.validationMessage {
+  display: none;
+}
+
+form.ng-submitted input[type="radio"].ng-invalid + span.validationMessage {
+  display: inline;
+  position: absolute;
+  color: #000;
+  background: #fff;
+  border: 1px solid #000;
+  padding: 6px 10px;
+  line-height: 12px;
+  text-align: center;
+  border-radius: 6px;
+  left: -10px;
+  bottom: -20px;
+  box-shadow: 2px 2px 3px #A6A0A0;
+  z-index: 2;
+}
+
+input[type="radio"].ng-invalid + span.validationMessage:before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 15px;
+  margin-left: -8px;
+  width: 0;
+  height: 0;
+  border-bottom: 8px solid #6D6D6D;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  z-index: 2;
+}
+
+input[type="radio"].ng-invalid + span.validationMessage:after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 15px;
+  margin-left: -6px;
+  width: 0;
+  height: 0;
+  border-bottom: 6px solid #FFFFFF;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  z-index: 2;
+}
+
+select.ng-invalid + span.validationMessage {
+  display: none;
+}
+
+#heq-visible {
+  padding: 10px;
+  margin: 0 0 15px 0;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+#heq-visible p {
+  ;
+  color: #000;
+  line-height: 1.125em/*18 / 16 */
+  ;
+  margin: 0 0 15px 5px;
+}
+
+#heq-visible a {
+  color: #000;
+  border-bottom: 1px solid #00A5CD;
+  line-height: 1.125em/*18 / 16 */
+  ;
+  /*padding: 0 2px; display: inline-block;*/
+  margin: 10px 0;
+}
+
+#heq-visible a:hover {
+  background: #00a5cd;
+  color: #fff;
+}
