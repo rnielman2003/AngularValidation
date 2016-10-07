@@ -165,6 +165,11 @@ input.ng-invalid:focus + span.validationMessage:after {
   margin-left: 10px;
 }
 
+.formFieldsWrapper.block select.ng-invalid:focus + span.validationMessage,
+.formFieldsWrapper.block input[type="text"].ng-invalid:focus + span.validationMessage {
+    left:auto;
+}
+
 .formFieldsWrapper select.ng-invalid:focus + span.validationMessage:before,
 .formFieldsWrapper input[type="text"].ng-invalid:focus + span.validationMessage:before {
   content: '';
