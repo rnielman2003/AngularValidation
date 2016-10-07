@@ -24,11 +24,6 @@ myapp.controller('showCrtl', function ($scope) {
   
   $scope.hasError = function(field, validation) {
     if (validation) {
-    	console.log($scope.theForm);
-    	//console.log($scope.theForm[field].$dirty);
-//console.log($scope.theForm[field].$error[validation]);
-      //console.log($scope.theForm[field].$dirty && $scope.theForm[field].$error[validation]);
-console.log($scope.theForm.$submitted);
 
       return ($scope.theForm[field].$dirty && $scope.theForm[field].$error[validation]) || ($scope.theForm.$submitted && $scope.theForm[field].$error[validation]);
     }
@@ -44,37 +39,68 @@ console.log($scope.theForm.$submitted);
   }
 });
 
-(function () {
-    myapp
-     .directive('formSetFocus', function () {
-         return {
-             restrict: 'A',
-             link: function (scope, elem) {
 
-                 // set up event handler on the form element
-                 elem.on('submit', function () {
+myapp.directive('formSetFocus', function () {
+    return {
+        restrict: 'A',
+        link: function (scope, elem) {
 
-                     //Finds y value of given object
-                     function findPos(obj) {
-                         var curtop = 0;
-                         if (obj.offsetParent) {
-                             do {
-                                 curtop += obj.offsetTop;
-                             } while (obj = obj.offsetParent);
-                             return [curtop];
-                         }
-                     }
+            // set up event handler on the form element
+            elem.on('submit', function () {
 
-                     // find the first invalid element
-                     var firstInvalid = elem[0].querySelector('.ng-invalid');
+                //Finds y value of given object
+                function findPos(obj) {
+                    var curtop = 0;
+                    if (obj.offsetParent) {
+                        do {
+                            curtop += obj.offsetTop;
+                        } while (obj = obj.offsetParent);
+                        return [curtop];
+                    }
+                }
 
-                     // if we find one, set focus
-                     if (firstInvalid) {
-                         firstInvalid.focus();
-                         window.scrollTo(0, findPos(firstInvalid)-40);
-                     }
-                 });
-             }
-         };
-     });
-})();
+                // find the first invalid element
+                var firstInvalid = elem[0].querySelector('.ng-invalid');
+                // if we find one, set focus
+                if (firstInvalid) {
+                    firstInvalid.focus();
+                    window.scrollTo(0, findPos(firstInvalid)-40);
+                }
+            });
+        }
+    };
+});
+
+myapp.directive('popErrorMessageRight', [
+
+    function () {
+        var wrapper = angular.element('<div class="formFieldsWrapper inline"></div>');
+        var errorDiv = angular.element('<span class="validationMessage"></span>')
+        return {
+            restrict: "EA",
+            replace: false,
+            transclude: false,
+            require: 'ngModel',
+            
+            link: function (scope, element, attrs, controller) {
+                //get list of attrs
+                var attributes = scope.$eval(attrs.popErrorMessageRight);       
+                element.wrap(wrapper);
+                element.after(errorDiv);
+                //append txt set to this
+                element.next().html(attributes.txt);
+                //set the width
+                element.next().css('width', attributes.width);
+                scope.inputCtrl = controller;
+                scope.$watch('inputCtrl.$valid', function(newVal, oldVal) {
+                    if (newVal === true) {
+                        element.next().addClass('hideMe');
+                    } else {
+                        element.next().removeClass('hideMe');
+                    }
+                });
+            }
+        };
+    }
+]);
+
