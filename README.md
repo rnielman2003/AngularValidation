@@ -1,2 +1,4 @@
 # AngularValidation
-Validation of Forms in Angular with nice arrow Descriptions. This is in the very early stages but I will be converting this into a directive that should make it much easier to use.
+Validation of Forms in Angular with nice arrow Descriptions. 
+
+This is designed to upon form submit highlight the first field with an error then a popup arrow tells you why the validation didn't pass.
