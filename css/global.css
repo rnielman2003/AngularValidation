@@ -147,11 +147,10 @@ input.ng-invalid:focus + span.validationMessage:after {
 
 .formFieldsWrapper select.ng-invalid:focus + span.validationMessage,
 .formFieldsWrapper input[type="text"].ng-invalid:focus + span.validationMessage {
-  width: 150px;
   display: inline;
   position: absolute;
   left: 100%;
-  top: 50%;
+  top: 0;
   color: #000;
   background: #fff;
   border: 1px solid #000;
@@ -161,9 +160,14 @@ input.ng-invalid:focus + span.validationMessage:after {
   border-radius: 6px;
   box-shadow: 2px 2px 3px #A6A0A0;
   z-index: 2;
-  margin-top: -20px;
   margin-left: 10px;
 }
+
+.formFieldsWrapper input[type="text"].ng-invalid:focus + span.validationMessage {
+   bottom:auto;
+   top:-2px;
+}
+
 
 .formFieldsWrapper.block select.ng-invalid:focus + span.validationMessage,
 .formFieldsWrapper.block input[type="text"].ng-invalid:focus + span.validationMessage {
@@ -203,7 +207,7 @@ input.ng-invalid:focus + span.validationMessage:after {
 
 .validationMessage.hideMe {display:none;}
 
-select.ng-invalid + span.validationMessage {
+span.validationMessage {
   display: none;
 }
 /*--------------------------- Specific for Angular Validation-------------------------------------*/
@@ -221,3 +225,4 @@ input[type="radio"].ng-invalid:focus + span.validationMessage:after{content: '';
 .radioGroupValidationWrapper {position:relative; display:inline-block;}
 .inlineField { display: inline-block; }
 .inlineFieldsWrapper input[type="radio"] { margin-bottom: 15px; }
+
