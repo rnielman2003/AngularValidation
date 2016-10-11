@@ -22,14 +22,7 @@ myapp.controller('showCrtl', function ($scope) {
     actor: 'Arnold'
   }];
   
-  $scope.hasError = function(field, validation) {
-    if (validation) {
 
-      return ($scope.theForm[field].$dirty && $scope.theForm[field].$error[validation]) || ($scope.theForm.$submitted && $scope.theForm[field].$error[validation]);
-    }
-    console.log('notvalidation', $scope.theForm[field].$dirty && $scope.theForm[field].$invalid) || ($scope.theForm.$submitted && $scope.theForm[field].$invalid);
-    return ($scope.theForm[field].$dirty && $scope.theForm[field].$invalid) || ($scope.theForm.$submitted && $scope.theForm[field].$invalid);
-  };
 
   $scope.submitForm = function(newForm) {
     if ($scope.theForm.$invalid) {
@@ -74,8 +67,7 @@ myapp.directive('formSetFocus', function () {
 myapp.directive('popErrorMessageRight', [
 
     function () {
-        var wrapper = angular.element('<div class="formFieldsWrapper inline"></div>');
-        var errorDiv = angular.element('<span class="validationMessage"></span>')
+        
         return {
             restrict: "EA",
             replace: false,
@@ -83,6 +75,8 @@ myapp.directive('popErrorMessageRight', [
             require: 'ngModel',
             
             link: function (scope, element, attrs, controller) {
+                var wrapper = angular.element('<div class="formFieldsWrapper inline"></div>');
+                var errorDiv = angular.element('<span class="validationMessage"></span>');
                 //get list of attrs
                 var attributes = scope.$eval(attrs.popErrorMessageRight);       
                 element.wrap(wrapper);
