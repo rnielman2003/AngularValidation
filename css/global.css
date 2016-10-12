@@ -83,9 +83,8 @@ span.required {
   margin-bottom: 10px;
 }
 
-/*--------------------------- Angular Validation-------------------------------------*/
+/*--------------------------- Basic formatting for this box-------------------------------------*/
 input[type="radio"].ng-invalid:focus + span.validationMessage,
-textarea.ng-invalid:focus + span.validationMessage,
 input.ng-invalid:focus + span.validationMessage {
   display: inline;
   position: absolute;
@@ -102,7 +101,6 @@ input.ng-invalid:focus + span.validationMessage {
   z-index: 2;
 }
 input[type="radio"].ng-invalid:focus + span.validationMessage:before,
-textarea.ng-invalid:focus + span.validationMessage:before,
 input.ng-invalid:focus + span.validationMessage:before {
   content: '';
   position: absolute;
@@ -117,7 +115,6 @@ input.ng-invalid:focus + span.validationMessage:before {
   z-index: 2;
 }
 input[type="radio"].ng-invalid:focus + span.validationMessage:after,
-textarea.ng-invalid:focus + span.validationMessage:after,
 input.ng-invalid:focus + span.validationMessage:after {
   content: '';
   position: absolute;
@@ -132,6 +129,7 @@ input.ng-invalid:focus + span.validationMessage:after {
   z-index: 2;
 }
 
+/*------------- Overrides -------------*/
 input[type="radio"].ng-invalid + span.validationMessage{display:none;}
 form.ng-submitted input[type="radio"].ng-invalid:focus + span.validationMessage{display:inline;position:absolute;color:#000;background:#ffff99;border: 1px solid #000;padding:6px 10px;line-height:12px;text-align:center;border-radius:6px;left:-5px;bottom:-30px;box-shadow: 2px 2px 3px #A6A0A0;z-index:2;}
 input[type="radio"].ng-invalid:focus + span.validationMessage:before{content: '';position: absolute;bottom: 100%;left: 15px;margin-left: -8px;width: 0;height: 0;border-bottom: 8px solid #6D6D6D;border-right: 8px solid transparent;border-left: 8px solid transparent;z-index:2;}
@@ -143,6 +141,7 @@ input[type="radio"].ng-invalid:focus + span.validationMessage:after{content: '';
 .formFieldsWrapper.block { display: block; }
 
 .formFieldsWrapper select.ng-invalid:focus + span.validationMessage,
+.formFieldsWrapper textarea.ng-invalid:focus + span.validationMessage,
 .formFieldsWrapper input[type="text"].ng-invalid:focus + span.validationMessage {
   display: inline;
   position: absolute;
@@ -165,6 +164,10 @@ input[type="radio"].ng-invalid:focus + span.validationMessage:after{content: '';
    top:-2px;
 }
 
+.formFieldsWrapper textarea.ng-invalid:focus + span.validationMessage {
+    top:50%;
+}
+
 
 .formFieldsWrapper.block select.ng-invalid:focus + span.validationMessage,
 .formFieldsWrapper.block input[type="text"].ng-invalid:focus + span.validationMessage {
@@ -174,6 +177,7 @@ input[type="radio"].ng-invalid:focus + span.validationMessage:after{content: '';
 /*----little arrow part----*/
 
 .formFieldsWrapper select.ng-invalid:focus + span.validationMessage:before,
+.formFieldsWrapper textarea.ng-invalid:focus + span.validationMessage:before,
 .formFieldsWrapper input[type="text"].ng-invalid:focus + span.validationMessage:before {
   content: '';
   position: absolute;
@@ -189,6 +193,7 @@ input[type="radio"].ng-invalid:focus + span.validationMessage:after{content: '';
 }
 
 .formFieldsWrapper select.ng-invalid:focus + span.validationMessage:after,
+.formFieldsWrapper textarea.ng-invalid:focus + span.validationMessage:after,
 .formFieldsWrapper input[type="text"].ng-invalid:focus + span.validationMessage:after {
   content: '';
   position: absolute;
@@ -203,21 +208,18 @@ input[type="radio"].ng-invalid:focus + span.validationMessage:after{content: '';
   z-index: 2;
 }
 
-
 .validationMessage.hideMe {display:none;}
 
 span.validationMessage {
   display: none;
 }
 /*--------------------------- Specific for Angular Validation-------------------------------------*/
-textarea.ng-invalid:focus + span.validationMessage,
+/*textarea.ng-invalid:focus + span.validationMessage,
 input.ng-invalid:focus + span.validationMessage{display:inline;position:absolute;color:#000;background:#ffff99;border: 1px solid #000;padding:6px 10px;line-height:12px;text-align:center;border-radius:6px;left:0;bottom:-17px;box-shadow: 2px 2px 3px #A6A0A0;z-index:2;}
 textarea.ng-invalid:focus + span.validationMessage:before,
 input.ng-invalid:focus + span.validationMessage:before{content: '';position: absolute;bottom: 100%;left: 25px;margin-left: -8px;width: 0;height: 0;border-bottom: 8px solid #6D6D6D;border-right: 8px solid transparent;border-left: 8px solid transparent;z-index:2;}
 textarea.ng-invalid:focus + span.validationMessage:after,
-input.ng-invalid:focus + span.validationMessage:after{content: '';position: absolute;bottom: 100%;left: 25px;margin-left: -6px;width: 0;height: 0;border-bottom: 6px solid #FFFF99;border-right: 6px solid transparent;border-left: 6px solid transparent;z-index:2;}
-
+input.ng-invalid:focus + span.validationMessage:after{content: '';position: absolute;bottom: 100%;left: 25px;margin-left: -6px;width: 0;height: 0;border-bottom: 6px solid #FFFF99;border-right: 6px solid transparent;border-left: 6px solid transparent;z-index:2;}*/
 
 .inlineField { display: inline-block; }
 .inlineFieldsWrapper input[type="radio"] { margin-bottom: 15px; }
-
