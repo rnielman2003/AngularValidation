@@ -17,28 +17,28 @@
 
                 <label for="whoisthisfor">who is this request for</label>
                 <select name="requestFor" id="whoisthisfor" data-ng-model="newForm.requestFor" data-ng-options="p.first + ' ' + p.last for p in people"
-                required pop-error-message-right="{txt:'Please choose from list.',width:'160px'}">
+                required pop-error-message="{txt:'Please choose from list.',width:'160px'}">
                     <option value="">Select One</option>
                 </select>
 
                 <br/>
                 <label for="yourname">Your Name:</label>
-                <input type="text" name="yourname" id="yourname" data-ng-model="newForm.name" required pop-error-message-right="{txt:'Please enter your name.',width:'170px'}"
+                <input type="text" name="yourname" id="yourname" data-ng-model="newForm.name" required pop-error-message="{txt:'Please enter your name.',width:'170px'}"
                 />
-                <!--
+                
                 <p class="p4 label"><span class="required">*</span>Gender:</p>
 
-                <input type="radio" data-ng-model="newForm.gender" name="gender" value="male" required> Male
-
-                <input type="radio" data-ng-model="newForm.gender" name="gender" value="female" required> Female
+                <input type="radio" data-ng-model="newForm.gender" name="gender" value="male" required pop-error-message="{txt:'Please choose Gender.',width:'170px'}"> Male
+                <input type="radio" data-ng-model="newForm.gender" name="gender" value="female" required pop-error-message="{txt:'Please choose Gender.',width:'170px'}"> Female
                 <br>
 
-                
+                <!--
                     <div class="inlineFieldsWrapper">
                         <p class="p4 label"><span class="required">*</span>Please let us know how we can help you</p>
                         <textarea name="description" data-ng-model="newForm.description" required></textarea>
                         <span ng-show="hasError('description', 'required')" class="validationMessage">Please fill out the required textarea field</span>
                     </div>-->
+                    <br /><br /><br />
                 <input type="submit" value="SUBMIT" class="btn submitBtn" />
             </form>
         </div>
