@@ -64,7 +64,7 @@ myapp.directive('formSetFocus', function () {
     };
 });
 
-myapp.directive('popErrorMessageRight', [
+myapp.directive('popErrorMessage', [
 
     function () {
         
@@ -78,7 +78,7 @@ myapp.directive('popErrorMessageRight', [
                 var wrapper = angular.element('<div class="formFieldsWrapper inline"></div>');
                 var errorDiv = angular.element('<span class="validationMessage"></span>');
                 //get list of attrs
-                var attributes = scope.$eval(attrs.popErrorMessageRight);       
+                var attributes = scope.$eval(attrs.popErrorMessage);       
                 element.wrap(wrapper);
                 element.after(errorDiv);
                 //append txt set to this
