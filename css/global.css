@@ -216,10 +216,13 @@ form.ng-submitted input[type="checkbox"].ng-invalid:focus + span.validationMessa
   z-index: 2;
 }
 
-.validationMessage.hideMe {display:none;}
+.validationMessage.hideMe {
+    display:none;
+}
 
 span.validationMessage {
   display: none;
+  font-size:12px;
 }
 /*--------------------------- Specific for Angular Validation-------------------------------------*/
 /*textarea.ng-invalid:focus + span.validationMessage,
