@@ -166,7 +166,7 @@ form.ng-submitted input[type="checkbox"].ng-invalid:focus + span.validationMessa
 
 .formFieldsWrapper input[type="text"].ng-invalid:focus + span.validationMessage {
    bottom:auto;
-   top:-2px;
+   top:-3px;
 }
 
 .formFieldsWrapper textarea.ng-invalid:focus + span.validationMessage {
