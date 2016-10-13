@@ -1,3 +1,4 @@
+body {font-family:Arial, sans-serif;}
 input[type="text"] {
   width: 310px;
   margin-bottom: 15px;
@@ -23,7 +24,6 @@ form.ng-submitted input[type="checkbox"].ng-invalid{
 }
 
 select {
-  width: 310px;
   padding: 2px 5px 2px 5px;
   margin-bottom: 15px;
   border: 1px solid #bcbcbc;
@@ -43,7 +43,6 @@ input.btn {
   min-width: 100px;
   border: none;
   text-align: center;
-  font-size: .75em;
   color: #fff;
   cursor: pointer;
 }
@@ -51,10 +50,14 @@ input.btn {
 
 input.submitBtn {
   margin:10px 0 0 380px;
+  padding:10px 15px;
+  border-radius:5px;
+  font-weight:bold;
+  letter-spacing:1px;
 }
 
 input.btn:hover {
-  background: #FFC107;
+  background: #fb0505;
 }
 
 .submitBtnSectionWrapper {
