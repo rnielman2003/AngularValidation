@@ -15,27 +15,37 @@
             <p class="fields_required"><span class="required">*</span> Required</p>
             <form name="theForm" data-ng-submit="submitForm(newForm)" novalidate="" form-set-focus>
 
-                <label for="whoisthisfor">who is this request for</label>
+                <label for="whoisthisfor"><span class="required">*</span>Who is this request for?</label>
                 <select name="requestFor" id="whoisthisfor" data-ng-model="newForm.requestFor" data-ng-options="p.first + ' ' + p.last for p in people"
                 required pop-error-message="{txt:'Please choose from list.',width:'160px'}">
                     <option value="">Select One</option>
                 </select>
 
-                <br/>
-                <label for="yourname">Your Name:</label>
+                <br />
+
+                <label for="yourname"><span class="required">*</span>Your Name:</label>
                 <input type="text" name="yourname" id="yourname" data-ng-model="newForm.name" required pop-error-message="{txt:'Please enter your name.',width:'170px'}"
                 />
-                
-                <p class="p4 label"><span class="required">*</span>Gender:</p>
 
-                <input type="radio" data-ng-model="newForm.gender" name="gender" value="male" required pop-error-message="{txt:'Please choose Gender.',width:'170px'}"> Male
+                <br />
+
+                <label for="gender"><span class="required">*</span>Gender:</label>
+                <input type="radio" id="gender" data-ng-model="newForm.gender" name="gender" value="male" required pop-error-message="{txt:'Please choose Gender.',width:'170px'}"> Male
                 <input type="radio" data-ng-model="newForm.gender" name="gender" value="female" required pop-error-message="{txt:'Please choose Gender.',width:'170px'}"> Female
-                <br>     
-                <p class="p4 label"><span class="required">*</span>Please let us know how we can help you</p>
-                <textarea name="description" data-ng-model="newForm.description" required pop-error-message="{txt:'Please let us know how we can help you',width:'150px'}"></textarea>
-                        
-                   
-                    <br /><br /><br />
+
+                <br /><br />
+
+                <label for="description"><span class="required">*</span>Please let us know how we can help you</label>
+                <br />
+                <textarea name="description" id="description" data-ng-model="newForm.description" required pop-error-message="{txt:'Please let us know how we can help you',width:'150px'}"></textarea>
+
+                <br />
+
+                <input type="checkbox" id="bike" data-ng-model="newForm.terms" name="vehicle" value="Bike" required pop-error-message="{txt:'You must accept terms and conditions.',width:'140px'}">
+                <label for="bike">I accept <a href="#">terms and conditions</a></label>
+
+                <br />
+
                 <input type="submit" value="SUBMIT" class="btn submitBtn" />
             </form>
         </div>
